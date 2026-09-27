@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KAZERA | Premium Streetwear T-Shirts</title>
+<meta name="description" content="KAZERA - premium streetwear t-shirts. Bold designs, everyday comfort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#000;--secondary:#1a1a1a;--accent:#D4AF37;--text:#f5f5f5;
+  --button:#D4AF37;--header:#000;--footer:#0d0d0d;--radius:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--primary);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}ul{list-style:none}
+.container{max-width:1240px;margin:0 auto;padding:0 20px}
+
+.site-header{background:var(--header);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;gap:20px}
+.logo-text{font-size:24px;font-weight:700;letter-spacing:2px;color:var(--accent)}
+.main-nav{display:flex;gap:28px}
+.main-nav a{font-size:14px;letter-spacing:.5px;text-transform:uppercase;opacity:.85;transition:opacity .2s,color .2s}
+.main-nav a:hover{opacity:1;color:var(--accent)}
+.header-icons{display:flex;align-items:center;gap:18px;font-size:20px}
+@media(max-width:900px){.main-nav{display:none}}
+
+.btn{display:inline-block;padding:13px 32px;border-radius:var(--radius);font-size:14px;letter-spacing:1px;text-transform:uppercase;font-weight:600;cursor:pointer;border:1px solid var(--button);transition:all .25s}
+.btn-primary{background:var(--button);color:#000}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;background:linear-gradient(135deg,#1a1a1a,#000) center/cover}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.85) 10%,rgba(0,0,0,.25) 100%)}
+.hero-content{position:relative;z-index:2;max-width:560px;padding:0 20px;margin:0 auto;width:100%}
+.hero-content h1{font-size:clamp(32px,6vw,56px);font-weight:800;letter-spacing:1px;margin-bottom:18px}
+.hero-content p{font-size:18px;opacity:.85;margin-bottom:30px}
+
+.section{padding:70px 0}
+.section-title{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px}
+.section-title h2{font-size:28px;font-weight:700;letter-spacing:1px}
+.section-title a{font-size:13px;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px}
+
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px}
+.product-card{background:var(--secondary);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.product-card-img{aspect-ratio:3/4;background:linear-gradient(145deg,#2a2a2a,#111) center/cover;position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.15);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+.product-badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#000;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;text-transform:uppercase}
+.product-badge.sale{left:auto;right:10px;background:#e02424;color:#fff}
+.product-info{padding:16px}
+.product-info h3{font-size:15px;font-weight:500;margin-bottom:8px}
+.price-row{display:flex;gap:10px;align-items:center}
+.price{font-weight:700;color:var(--accent);font-size:16px}
+.price-old{text-decoration:line-through;opacity:.5;font-size:13px}
+
+.promo-banner{background:linear-gradient(135deg,#1a1a1a,#000) center/cover;border-radius:var(--radius);padding:60px 40px;text-align:center;position:relative;overflow:hidden}
+.promo-banner h2{font-size:32px;margin-bottom:12px}
+.promo-banner p{margin-bottom:24px;opacity:.85}
+
+.site-footer{background:var(--footer);border-top:1px solid rgba(255,255,255,.08);padding:50px 0 24px;margin-top:auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.footer-grid h4{font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;color:var(--accent)}
+.footer-grid ul li{margin-bottom:10px;font-size:14px;opacity:.8}
+.footer-grid ul li a:hover{color:var(--accent)}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;opacity:.6}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
+
+.wa-float{position:fixed;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4);bottom:24px;right:24px;animation:wa-pulse 2.4s infinite}
+@keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+.note-banner{background:#111;border-bottom:1px solid rgba(212,175,55,.35);color:#d4af37;font-size:12.5px;text-align:center;padding:9px 16px}
+</style>
+</head>
+<body>
+
+<div class="note-banner">Static design preview — sample content only. Full store (cart, checkout, admin panel) runs from the Node.js project.</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo"><span class="logo-text">KAZERA</span></a>
+    <nav class="main-nav">
+      <a href="#">Home</a><a href="#shop">Shop</a><a href="#shop">New Arrivals</a><a href="#shop">Sale</a>
+    </nav>
+    <div class="header-icons"><span>🛒</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>WEAR THE STATEMENT</h1>
+      <p>Premium streetwear tees, dropped weekly.</p>
+      <a href="#shop" class="btn btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="section container" id="shop">
+    <div class="section-title"><h2>Featured Products</h2><a href="#">View All →</a></div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card-img"><span class="product-badge">New</span>KAZERA</div>
+        <div class="product-info"><h3>Oversized Tee - Onyx</h3>
+          <div class="price-row"><span class="price">₹1,199</span><span class="price-old">₹1,499</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">KAZERA</div>
+        <div class="product-info"><h3>Graphic Tee - Gold Serpent</h3>
+          <div class="price-row"><span class="price">₹1,299</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img"><span class="product-badge">New</span>KAZERA</div>
+        <div class="product-info"><h3>Regular Tee - Classic White</h3>
+          <div class="price-row"><span class="price">₹899</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img"><span class="product-badge sale">Sale</span>KAZERA</div>
+        <div class="product-info"><h3>Oversized Tee - Ivory</h3>
+          <div class="price-row"><span class="price">₹1,349</span><span class="price-old">₹1,499</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding:20px 20px 0;">
+    <div class="promo-banner">
+      <h2>END OF SEASON SALE</h2>
+      <p>Up to 40% off selected styles.</p>
+      <a href="#shop" class="btn btn-primary">Shop Sale</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="logo-text" style="margin-bottom:14px;">KAZERA</div>
+        <p style="opacity:.75;font-size:14px;max-width:320px;">Premium streetwear, designed for everyday.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#">All Products</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Sale</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>+91 80999 81296</li><li>hello@kazera.com</li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 KAZERA. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918099981296?text=Hello%20KAZERA%2C%20I%20want%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg width="30" height="30" viewBox="0 0 32 32" fill="#fff"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.39.7 4.61 1.9 6.48L4 29l7.68-1.86a11.9 11.9 0 0 0 4.33.82h.01c6.63 0 12-5.38 12-12.01C28.02 8.38 22.64 3 16.01 3zm0 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-4.56 1.1 1.22-4.44-.24-.46a9.77 9.77 0 0 1-1.5-5.2c0-5.4 4.4-9.79 9.8-9.79 2.62 0 5.08 1.02 6.93 2.87a9.72 9.72 0 0 1 2.87 6.92c0 5.4-4.4 9.58-9.15 9.58zm5.36-7.28c-.29-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.29-.77.96-.94 1.16-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.62.71.23 1.35.2 1.86.12.57-.08 1.75-.72 2-1.41.24-.69.24-1.28.17-1.41-.07-.12-.27-.2-.56-.34z"/></svg>
+</a>
+
+</body>
+</html>
